@@ -261,7 +261,7 @@ class block_ned_custom_menu extends block_base {
             } else {
                 $fullurl = new moodle_url($url);
             }
-            // Edit lable for font-awesome (CHEN).
+            // Edit label for font-awesome (CHEN).
             $str = $label;
 
             $parsme = explode("[fa-", $str);
@@ -282,7 +282,7 @@ class block_ned_custom_menu extends block_base {
             }
             // End font awesome filter.
 
-            $link = \html_writer::link($fullurl, $label2, array('title'=>$alt));
+            $link = \html_writer::link($fullurl, $label2, array('title' => $alt));
 
             // Check if option is active.
             if ($this->page->url->out(false) == $fullurl->out(false)) {
@@ -326,7 +326,8 @@ class block_ned_custom_menu extends block_base {
                 $optionslabel = $link;
             } else {
                 if( $parsme[0] ) {
-                    $bullet = \html_writer::tag('div', null, array('class' => 'optionbullet'));
+                    $bulletclass = $current ? 'optionbullet acc-menu-open' : 'optionbullet';
+                    $bullet = \html_writer::tag('div', null, array('class' => $bulletclass));
                 } else {
                     $parsme1 = explode("[fa-", $str);
                     $tempstring1 = '';
@@ -335,8 +336,10 @@ class block_ned_custom_menu extends block_base {
                        $tempstring1 = "<i class=\"fa fa-".$findAwesome1[0]."\"></i>";
                     }
 
-                    $bullet = \html_writer::tag('div', $tempstring1, array('class' => 'optionbullet hideBulletOption'));
+                    $bulletclass = $current ? 'optionbullet acc-menu-open hideBulletOption' : 'optionbullet hideBulletOption';
+                    $bullet = \html_writer::tag('div', $tempstring1, array('class' => $bulletclass));
                 }
+                $current = false;
 
                 $link = \html_writer::tag('div', $link);
                 $optionslabel = \html_writer::tag('div', $bullet. $link);
@@ -346,9 +349,8 @@ class block_ned_custom_menu extends block_base {
             $menuhtml .= $li;
         }
 
-        $ulactive = $current ? 'active' : '';
-        $current = false;
+        $ulactive = $current ? array('class' => 'active') : null;
 
-        return \html_writer::tag('ul', $menuhtml, array('class' => $ulactive));
+        return \html_writer::tag('ul', $menuhtml, $ulactive);
     }
 }
