@@ -1,0 +1,137 @@
+/* Base Styles */
+#cssmenu,
+#cssmenu ul,
+#cssmenu li,
+#cssmenu a {
+    border: 0;
+    font-size: 1em;
+    font-weight: normal;
+    list-style: none;
+    padding: 0;
+    position: relative;
+    margin: 0 -5px;
+    text-decoration: none;
+}
+#cssmenu a {
+    line-height: 1.3;
+}
+#cssmenu ul li div {
+    padding: 0 16px;
+}
+/* Primary options */
+#cssmenu > ul > li.current > div > div > a {
+    color: #FFF;
+}
+
+#cssmenu > ul > li > div > div > a {
+    border-top: none;
+    color: #333;
+    font-size: 1.2em
+}
+#cssmenu > ul > li > div > div > a > span {
+    display: block;
+    padding: 12px 10px;
+}
+#cssmenu > ul > li > div > div > a:hover {
+    text-decoration: none;
+}
+
+#cssmenu > ul > li > div > div {
+    display: inline-flex;
+    max-width: 86%;
+    padding: 5px 5px 5px 10px;
+    vertical-align: top;
+}
+
+#cssmenu  li.current {
+    background-color: #7caafe;
+}
+
+#cssmenu  li.current.has-sub {
+    background: none;
+    border-bottom: none;
+}
+#cssmenu  li.current.has-sub div a {
+    color: #fff;
+}
+#cssmenu  li.current.has-sub div {
+    background-color: #7caafe;
+}
+#cssmenu  li .optionbullet {
+    padding: 15px 10px;
+}
+#cssmenu  li .hideBulletOption {
+    background: none !important;
+    padding: 8px 2px;
+}
+#cssmenu  li.has-sub i {
+    font-size: 20px;
+    color: rgb(153, 153, 153);
+}
+
+#cssmenu  li.has-sub.current i,
+#cssmenu  li.hasnot-sub.current i {
+    color: #fff;
+}
+
+#cssmenu  li.has-sub.current .optionbullet {
+    background: url([[pix:block_ned_custom_menu|open_white]]) 0px 5px no-repeat;
+}
+
+#cssmenu  li.has-sub .optionbullet,
+#cssmenu  li.has-sub .acc-menu-closed {
+    background: url([[pix:block_ned_custom_menu|closed]]) 0px 5px no-repeat;
+}
+
+#cssmenu  li.has-sub .acc-menu-open {
+    background: url([[pix:block_ned_custom_menu|open]]) 0px 5px no-repeat;
+}
+
+#cssmenu  li.hasnot-sub .optionbullet {
+    background: url([[pix:block_ned_custom_menu|single]]) 0px 5px no-repeat;
+}
+
+#cssmenu ul ul {
+    display: none;
+    margin: 5px;
+}
+
+#cssmenu ul ul.active{
+    display: block;
+    margin: 5px;
+}
+
+#cssmenu ul ul li {
+    border-top: none;
+    padding: 0 38px;
+}
+
+#cssmenu ul ul a {
+    color: #676767;
+    display: block;
+    font-size: 1em;
+    font-weight: normal;
+    padding: 10px 10px 10px 25px;
+}
+#cssmenu ul ul a:before {
+    color: #999;
+    content: '\f0c8';
+    font-family: fontawesome;
+    font-size: 8px;
+    left: 10px;
+    position: absolute;
+    top: 15px;
+}
+
+#cssmenu ul ul li.current a,
+#cssmenu ul ul li.current a:before {
+    color: #FFF;
+}
+
+#cssmenu ul ul a:hover {
+    color: #000;
+}
+li.root {
+    font-size: 18px !important;
+    padding: 3px !important;
+}
