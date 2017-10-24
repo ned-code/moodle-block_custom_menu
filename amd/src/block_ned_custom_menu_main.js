@@ -38,7 +38,7 @@ define(['jquery', 'core/log'], function ($, log) {
             $(document).ready(function () {
                 var openimageurl = M.util.image_url('open', 'block_ned_custom_menu');
                 log.debug('Block NED Custom Menu AMD init open image url - ' + openimageurl);
-                $('#cssmenu ul li.has-sub.current div a').each(function(i, obj) {
+                $('#nedcmenu ul li.has-sub.current div a').each(function(i, obj) {
                     if($(this).attr('title') == "no-highlight" ) {
                         var head_list = $(this).parent().closest('li').attr('class').split(' ');
 
@@ -51,12 +51,12 @@ define(['jquery', 'core/log'], function ($, log) {
                     }
                 });
 
-                $('#cssmenu > ul > li.has-sub > div > div.optionbullet').click(function() {
+                $('#nedcmenu > ul > li.has-sub > div > div.optionbullet').click(function() {
                     var checkElement = $(this).parent().next();
 
                     $(this).parent().find(".optionbullet").removeClass("acc-menu-closed").addClass("acc-menu-open");
 
-                    $('#cssmenu ul ul').each(function(i, obj) {
+                    $('#nedcmenu ul ul').each(function(i, obj) {
                         if($(this).is(':visible') && !$(this).hasClass('active')) {
                             $(this).slideUp('normal');
                             $(this).parent().find(".optionbullet").removeClass('acc-menu-open').addClass("acc-menu-closed");

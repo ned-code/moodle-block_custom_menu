@@ -147,7 +147,7 @@ class block_ned_custom_menu extends block_base {
         // Generate the html.
         $menuhtml = $this->get_menu_html($menuoptions);
 
-        $wrapperdiv = \html_writer::tag('div', $menuhtml, array('id' => 'cssmenu'));
+        $wrapperdiv = \html_writer::tag('div', $menuhtml, array('id' => 'nedcmenu'));
 
         $this->content = new stdClass;
         $this->content->text = $wrapperdiv;
