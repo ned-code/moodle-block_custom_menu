@@ -266,6 +266,7 @@ class block_ned_custom_menu extends block_base {
 
             $parsme = explode("[fa-", $str);
             for ($i=1; $i < count($parsme); $i++) {
+                $tempstring = '';
                 $findAwesome = explode("]", $parsme[$i]);
                 for ($j=1; $j < count($findAwesome); $j++) {
                     $tempstring .= $findAwesome[$j]."]";
