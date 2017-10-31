@@ -34,6 +34,7 @@
 }
 #nedcmenu > ul > li > div > div > a:hover {
     text-decoration: none;
+    color: #676767;
 }
 
 #nedcmenu > ul > li > div > div {
@@ -76,23 +77,23 @@
 
 #nedcmenu  li.has-sub.current .optionbullet {
     background: url([[pix:block_ned_custom_menu|open_white]]) 0px 5px no-repeat;
-    background-size: 19px;
+    background-size: 18px;
 }
 
 #nedcmenu  li.has-sub .optionbullet,
 #nedcmenu  li.has-sub .acc-menu-closed {
     background: url([[pix:block_ned_custom_menu|closed]]) 0px 5px no-repeat;
-    background-size: 19px;
+    background-size: 18px;
 }
 
 #nedcmenu  li.has-sub .acc-menu-open {
     background: url([[pix:block_ned_custom_menu|open]]) 0px 5px no-repeat;
-    background-size: 19px;
+    background-size: 18px;
 }
 
 #nedcmenu  li.hasnot-sub .optionbullet {
     background: url([[pix:block_ned_custom_menu|single]]) 0px 5px no-repeat;
-    background-size: 19px;
+    background-size: 18px;
 }
 
 #nedcmenu ul ul {
