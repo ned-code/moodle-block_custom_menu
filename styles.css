@@ -65,7 +65,7 @@
     padding: 8px 2px;
 }
 #nedcmenu  li.has-sub i {
-    font-size: 20px;
+    font-size: 18px;
     color: rgb(153, 153, 153);
 }
 
@@ -76,19 +76,23 @@
 
 #nedcmenu  li.has-sub.current .optionbullet {
     background: url([[pix:block_ned_custom_menu|open_white]]) 0px 5px no-repeat;
+    background-size: 19px;
 }
 
 #nedcmenu  li.has-sub .optionbullet,
 #nedcmenu  li.has-sub .acc-menu-closed {
     background: url([[pix:block_ned_custom_menu|closed]]) 0px 5px no-repeat;
+    background-size: 19px;
 }
 
 #nedcmenu  li.has-sub .acc-menu-open {
     background: url([[pix:block_ned_custom_menu|open]]) 0px 5px no-repeat;
+    background-size: 19px;
 }
 
 #nedcmenu  li.hasnot-sub .optionbullet {
     background: url([[pix:block_ned_custom_menu|single]]) 0px 5px no-repeat;
+    background-size: 19px;
 }
 
 #nedcmenu ul ul {
@@ -103,12 +107,18 @@
 
 #nedcmenu ul ul.active{
     display: block;
-    margin: 5px;
+    margin: 0;
+    padding: 5px;
 }
 
 #nedcmenu ul ul li {
     border-top: none;
     padding: 0 38px;
+    border-bottom: 1px solid #e3e3e3;
+}
+
+#nedcmenu ul ul li:last-child {
+    border-bottom: none;
 }
 
 #nedcmenu ul ul a {
@@ -141,5 +151,10 @@ li.root {
     padding: 3px !important;
 }
 #nedcmenu li.has-sub {
-    border-bottom: 1px solid #d8d6d6;
+    border-bottom: 1px solid #e3e3e3;
 }
+.block_ned_custom_menu .header {
+   border-bottom: 1px solid #e3e3e3;
+   padding-bottom: 6px;
+}
+
