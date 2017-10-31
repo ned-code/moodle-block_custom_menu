@@ -97,7 +97,7 @@
 
 #nedcmenu ul ul {
     display: none;
-    padding: 5px;
+    padding: 0 5px;
     border-top: 1px solid #e3e3e3;
     margin: 0;
     background: #fff;
@@ -108,7 +108,7 @@
 #nedcmenu ul ul.active{
     display: block;
     margin: 0;
-    padding: 5px;
+    padding: 0 5px;
 }
 
 #nedcmenu ul ul li {
@@ -117,16 +117,12 @@
     border-bottom: 1px solid #e3e3e3;
 }
 
-#nedcmenu ul ul li:last-child {
-    border-bottom: none;
-}
-
 #nedcmenu ul ul a {
     color: #676767;
     display: block;
     font-size: 1em;
     font-weight: normal;
-    padding: 10px 10px 10px 25px;
+    padding: 6px 10px 6px 25px;
 }
 #nedcmenu ul ul a:before {
     color: #999;
@@ -135,7 +131,7 @@
     font-size: 8px;
     left: 10px;
     position: absolute;
-    top: 15px;
+    top: 10px;
 }
 
 #nedcmenu ul ul li.current a,
@@ -157,4 +153,10 @@ li.root {
    border-bottom: 1px solid #e3e3e3;
    padding-bottom: 6px;
 }
+.block_ned_custom_menu {
+    padding: 6px 0 0px 0 !important;
+}
 
+.block_ned_custom_menu .content {
+    padding: 0px 14px !important;
+}
