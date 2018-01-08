@@ -1,0 +1,15 @@
+#nedcmenu {
+    margin: 0 -22px;
+}
+
+#nedcmenu>ul>li>div>div {
+    padding: 5px 5px 5px 16px;
+}
+
+#nedcmenu ul ul a {
+    padding: 6px 10px 8px 30px;
+}
+
+#nedcmenu ul ul a:before {
+    left: 14px;
+}

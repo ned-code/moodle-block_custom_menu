@@ -156,6 +156,7 @@ li.root {
 }
 .block_ned_custom_menu {
     padding: 6px 0 0px 0 !important;
+    background-color: #f5f5f5 !important;
 }
 
 .block_ned_custom_menu .content {
