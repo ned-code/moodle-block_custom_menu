@@ -13,3 +13,11 @@
 #nedcmenu ul ul a:before {
     left: 14px;
 }
+
+.block_ned_custom_menu {
+    background: #fff !important;
+}
+
+#nedcmenu ul ul.active {
+    padding: 0;
+}
