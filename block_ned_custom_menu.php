@@ -239,6 +239,19 @@ class block_ned_custom_menu extends block_base {
 
         $menuhtml = '';
 
+        $pageurl = null;
+        $courseformat = course_get_format($this->page->course);
+        if ($courseformat instanceof format_ned) {
+            $displaysection = $courseformat->get_displaysection();
+            if ($displaysection) {
+                $pageurl = $courseformat->get_view_url($displaysection)->out(false);
+            } else {
+                $pageurl = $this->page->url->out(false);
+            }
+        } else {
+            $pageurl = $this->page->url->out(false);
+        }
+
         foreach ($menuoptions as $menuoption) {
             list($label, $url, $alt, $inner, $submenuoptions) = array_values($menuoption);
 
@@ -284,7 +297,7 @@ class block_ned_custom_menu extends block_base {
             $link = \html_writer::link($fullurl, $label2, array('title' => $alt));
 
             // Check if option is active.
-            if ($this->page->url->out(false) == $fullurl->out(false)) {
+            if ($pageurl == $fullurl->out(false)) {
                 $liclasses[] = 'current';
                 $current = true;
             }
