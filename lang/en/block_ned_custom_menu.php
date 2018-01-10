@@ -33,7 +33,7 @@ $string['configclasses_help'] = 'The purpose of this configuration is to aid wit
 $string['configcontent'] = 'Content';
 $string['configtitle'] = 'Block title';
 $string['leaveblanktohide'] = 'leave blank to hide the title';
-$string['ned_custom_block:addinstance'] = 'Add a new NED Custom Menu block';
-$string['ned_custom_block:myaddinstance'] = 'Add a new NED Custom Menu block to My home';
+$string['ned_custom_menu:addinstance'] = 'Add a new NED Custom Menu block';
+$string['ned_custom_menu:myaddinstance'] = 'Add a new NED Custom Menu block to My home';
 $string['pluginname'] = 'NED Custom Menu';
 
