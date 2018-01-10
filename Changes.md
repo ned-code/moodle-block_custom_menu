@@ -1,5 +1,8 @@
 Version Information
 ===================
+Version 2.9.0.1.2
+  1. Fix not able to click on block controls when editing.
+
 Version 2.9.0.1.1
   1. Add Travis CI checking capability.
   2. Fix broken 'addinstance' and 'myaddinstance' strings.

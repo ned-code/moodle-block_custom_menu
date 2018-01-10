@@ -21,3 +21,8 @@
 #nedcmenu ul ul.active {
     padding: 0;
 }
+
+.block_ned_custom_menu .block-controls {
+    float: none !important;
+    text-align: right;
+}

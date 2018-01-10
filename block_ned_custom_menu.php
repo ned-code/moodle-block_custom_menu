@@ -55,8 +55,6 @@ class block_ned_custom_menu extends block_base {
         parent::get_required_javascript();
 
         $this->page->requires->js_call_amd('block_ned_custom_menu/block_ned_custom_menu_main', 'init', array());
-        //$this->page->requires->jquery();
-        //$this->page->requires->js('/blocks/ned_custom_menu/js/main.js');
     }
 
     /**
