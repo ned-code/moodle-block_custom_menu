@@ -19,10 +19,6 @@
     border-right: 1px solid rgba(238,238,238,1);
 }
 
-#nedcmenu ul ul.active {
-    padding: 0;
-}
-
 .block_ned_custom_menu {
     padding: 0 !important;
 }
@@ -30,4 +26,16 @@
 .block_ned_custom_menu .block-controls {
     float: none !important;
     text-align: right;
+}
+
+.block_with_controls .block-controls {
+    float: right !important;
+}
+
+.block_with_controls .header {
+    border-bottom: none;
+}
+
+#nedcmenu li.current.has-sub:first-child {
+    margin-top: 6px;
 }
