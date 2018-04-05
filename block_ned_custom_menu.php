@@ -261,17 +261,6 @@ class block_ned_custom_menu extends block_base {
 
             $liclasses = array();
 
-            // Get the full url for section anchors.
-            if (strpos($url, '#section-') === 0) {
-                $sectionnum = str_replace('#section-', '', $url);
-                $urlparams = array(
-                    'id' => $this->page->course->id,
-                    'section' => $sectionnum,
-                );
-                $fullurl = new moodle_url("$CFG->wwwroot/course/view.php", $urlparams);
-            } else {
-                $fullurl = new moodle_url($url);
-            }
             // Edit label for font-awesome (CHEN).
             $str = $label;
 
@@ -292,7 +281,62 @@ class block_ned_custom_menu extends block_base {
             foreach ($parsme as $k) {
                 $label2 .= $k;
             }
-            // End font awesome filter.
+            // End font-awesome filter.
+
+            // Get the full url for section anchors.
+            if (strpos($url, '#section-') === 0) {
+                $sectionnum = str_replace('#section-', '', $url);
+                $urlparams = array(
+                    'id' => $this->page->course->id,
+                    'section' => $sectionnum,
+                );
+                $fullurl = new moodle_url("$CFG->wwwroot/course/view.php", $urlparams);
+            } else if ((strlen($url) == 1) && ($url[0] == '#')) {
+                // Based upon '/filter/activitynames/filter.php'.
+                static $activitylist = null;
+                if (is_null($activitylist)) {
+                    $activitylist = array();
+                    global $PAGE;
+                    $modinfo = get_fast_modinfo($PAGE->course->id);
+
+                    // Create array of visible activities sorted by the name length (we are only interested in properties name and url).
+                    $sortedactivities = array();
+                    foreach ($modinfo->cms as $cm) {
+                        // Use normal access control and visibility, but exclude labels and hidden activities.
+                        if ($cm->visible and $cm->has_view() and $cm->uservisible) {
+                            $sortedactivities[] = (object)array(
+                                'name' => $cm->name,
+                                'url' => $cm->url,
+                                'namelen' => -strlen($cm->name), // Negative value for reverse sorting.
+                            );
+                        }
+                    }
+                    // Sort activities by the length of the activity name in reverse order.
+                    core_collator::asort_objects_by_property($sortedactivities, 'namelen', core_collator::SORT_NUMERIC);
+
+                    foreach ($sortedactivities as $cm) {
+                        $title = s(trim(strip_tags($cm->name)));
+                        $currentname = trim($cm->name);
+                        $entitisedname  = s($currentname);
+                        // Avoid empty or unlinkable activity names.
+                        if (!empty($title)) {
+                            $activitylist[$currentname] = $cm->url;
+                            if ($currentname != $entitisedname) {
+                                // If name has some entity (&amp; &quot; &lt; &gt;) add that filter too. MDL-17545.
+                                $activitylist[$entitisedname] = $cm->url;
+                            }
+                        }
+                    }
+                }
+                if (array_key_exists($label2, $activitylist)) {
+                    $fullurl = $activitylist[$label2];
+                } else {
+                    // Invalid, so just link to the course.
+                    $fullurl = new moodle_url($url);
+                }
+            } else {
+                $fullurl = new moodle_url($url);
+            }
 
             $link = \html_writer::link($fullurl, $label2, array('title' => $alt));
 

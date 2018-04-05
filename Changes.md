@@ -1,5 +1,8 @@
 Version Information
 ===================
+Version 2.9.0.1.4
+  1. Auto-linking - https://www.screencast.com/t/NZl6jGKQT and https://www.screencast.com/t/uEXrso4o5k.
+
 Version 2.9.0.1.3
   1. Fix not highlighting the current section with the NED format when the course settings
      are set to a 'Section delivery method' of 'Section' and with 'Specify default section',
