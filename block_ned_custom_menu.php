@@ -241,7 +241,11 @@ class block_ned_custom_menu extends block_base {
 
         $pageurl = null;
         $courseformat = course_get_format($this->page->course);
-        if ($courseformat instanceof format_ned) {
+        $ismodulepage = $this->page->context->contextlevel == CONTEXT_MODULE;
+
+        if ($ismodulepage) {
+            $pageurl = $this->page->url->out(false);
+        } else if ($courseformat instanceof format_ned) {
             $displaysection = $courseformat->get_displaysection();
             if ($displaysection) {
                 $pageurl = $courseformat->get_view_url($displaysection)->out(false);
