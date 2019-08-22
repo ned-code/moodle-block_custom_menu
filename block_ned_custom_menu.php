@@ -44,7 +44,7 @@ class block_ned_custom_menu extends block_base {
     }
 
     function specialization() {
-        $this->title = isset($this->config->title) ? format_string($this->config->title) : format_string(get_string('pluginname', 'block_ned_custom_menu'));
+        $this->title = (isset($this->config->title) && !empty($this->config->title)) ? format_string($this->config->title) : format_string(get_string('pluginname', 'block_ned_custom_menu'));
     }
 
     function instance_allow_multiple() {
