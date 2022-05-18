@@ -27,8 +27,11 @@
 
 defined('MOODLE_INTERNAL') || die();
 
+$plugin->version = 2022051800;        // The current plugin version (Date: YYYYMMDDXX)
 $plugin->release = '2.9.0.1.4';
-$plugin->version   = 2021012800;        // The current plugin version (Date: YYYYMMDDXX)
-$plugin->requires  = 2015051100.00; // 2.9 (Build: 20150511).
+$plugin->requires = 2015051100.00;     // 2.9 (Build: 20150511).
 $plugin->maturity = MATURITY_BETA;
 $plugin->component = 'block_ned_custom_menu';      // Full name of the plugin (used for diagnostics)
+$plugin->dependencies = array(
+    'local_ned_controller' => 2022051000
+);
