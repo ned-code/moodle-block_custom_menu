@@ -1,41 +1,37 @@
-#nedcmenu>ul>li>div>div {
-    padding: 5px 5px 5px 16px;
-}
-
-#nedcmenu ul ul a {
-    padding: 6px 10px 8px 30px;
-}
-
-#nedcmenu ul ul a:before {
-    left: 14px;
-}
-
-.block_ned_custom_menu {
-    background: #fff !important;
-}
-
-#nedcmenu ul ul {
-    border-left: 1px solid rgba(238,238,238,1);
-    border-right: 1px solid rgba(238,238,238,1);
-}
-
-.block_ned_custom_menu {
+.block.block_ned_custom_menu {
     padding: 0 !important;
 }
-
-.block_ned_custom_menu .block-controls {
-    float: none !important;
+.block.block_ned_custom_menu .block-header .block-controls {
+    position: initial;
     text-align: right;
 }
-
-.block_with_controls .block-controls {
-    float: right !important;
+.block.block_ned_custom_menu .block-header .block-controls .block-control-actions.commands {
+    justify-content: start;
+    padding-left: 5px;
 }
-
-.block_with_controls .header {
+.block.block_ned_custom_menu.block_with_controls .header {
     border-bottom: none;
 }
+.block.block_ned_custom_menu .block-header .card-title {
+    text-align: center;
+    padding: 5px;
+}
 
-#nedcmenu li.current.has-sub:first-child {
-    margin-top: 6px;
+.block.block_ned_custom_menu .card-block .block-header {
+    padding: 0;
+    position: relative;
+}
+.block_ned_custom_menu.block .card-block .header .block-control-actions.commands {
+    position: initial;
+}
+.block.block_ned_custom_menu .block-header .fa.fa-th-list {
+    display: none;
+}
+.block.block_ned_custom_menu .block-header .card-title .format-title {
+    min-height: 35px;
+    padding: 5px;
+    text-align: center;
+}
+.block.block_ned_custom_menu .footer:empty {
+    display: none;
 }
