@@ -1,0 +1,40 @@
+.block_ned_custom_menu.block {
+  padding: 0 !important;
+
+  .header {
+    position: relative;
+
+    .block-control-actions.commands {
+      position: absolute !important;
+      right: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      display: flex !important;
+      justify-content: end;
+      align-items: center;
+      box-sizing: border-box;
+    }
+
+    .title > * {
+      padding: 0;
+    }
+  }
+  .dynamic-title {
+    .raw-title {
+      display: inline;
+    }
+    .format-title {
+      display: none;
+    }
+  }
+  .title > * > .dynamic-title,
+  .card-title > .dynamic-title {
+    .raw-title {
+      display: none;
+    }
+    .format-title {
+      display: block;
+    }
+  }
+}
