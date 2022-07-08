@@ -146,7 +146,7 @@ class block_ned_custom_menu extends block_base implements \renderable {
      */
     public function get_menu(){
         if (empty($this->_menu)){
-            $text = $this->config->text;
+            $text = $this->config->text ?? '';
             $header_menu_on = false;
             if (method_exists('format_ned', 'get_active_format_ned')){
                 $format = format_ned::get_active_format_ned($this->page->course->id);
