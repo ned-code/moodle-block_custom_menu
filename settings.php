@@ -27,6 +27,7 @@
 
 defined('MOODLE_INTERNAL') || die;
 
+global $ADMIN;
 if ($ADMIN->fulltree) {
     $settings->add(new admin_setting_configcheckbox('block_ned_custom_menu_allowcssclasses',
         get_string('allowadditionalcssclasses', 'block_ned_custom_menu'),
