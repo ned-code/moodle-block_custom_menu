@@ -24,11 +24,11 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version = 2024052300;        // The current plugin version (Date: YYYYMMDDXX)
-$plugin->release = '2.9.0.1.4';
-$plugin->requires = 2015051100.00;     // 2.9 (Build: 20150511).
+$plugin->version  = 2024082200;    // The current plugin version (Date: YYYYMMDDXX).
+$plugin->requires = 2022112800.00;    // Moodle 4.1 (Build: 20221128)
+$plugin->release = '4.1.0.0.0';
 $plugin->maturity = MATURITY_BETA;
 $plugin->component = 'block_ned_custom_menu';      // Full name of the plugin (used for diagnostics)
 $plugin->dependencies = array(
-    'local_ned_controller' => 2024052300
+    'local_ned_controller' => 2024082200
 );
